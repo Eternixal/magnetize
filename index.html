@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated PayPal Button</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9;
+    }
+
+    /* Container animasi */
+    #paypal-container-F9LU59L3DLE7C {
+      width: 100%;
+      max-width: 350px;
+      padding: 0 15px;
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeSlide 1s forwards; /* animasi muncul */
+      animation-delay: 0.3s;
+    }
+
+    /* Keyframes animasi */
+    @keyframes fadeSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Optional hover effect */
+    #paypal-container-Q6S8WVRGGBP9S:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAApXbgh2NrQSJKkEdcvLb3IR2RGggPsi6a2iQtbOZCkeh7zALS9jqxp6yW9CMYjnT-LB3a5K2bPT1avWc&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
+  <!-- Container Button -->
+  <div id="paypal-container-F9LU59L3DLE7C"></div>
+
+  <!-- Render Hosted Button -->
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "F9LU59L3DLE7C",
+    }).render("#paypal-container-F9LU59L3DLE7C");
+  </script>
+
+</body>
+</html>
